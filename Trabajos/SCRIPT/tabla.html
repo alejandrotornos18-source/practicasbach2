@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Elementos Químicos</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    td, th {
+      border: 1px solid #000;
+      padding: 8px 12px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Elementos químicos — muestra en tabla</h2>
+
+  <table>
+    <tr><td><strong>Nombre</strong></td><td id="nombre">Carbono</td></tr>
+    <tr><td><strong>Símbolo</strong></td><td id="simbolo">C</td></tr>
+    <tr><td><strong>Peso</strong></td><td id="peso">12.011</td></tr>
+    <tr><td><strong>Número</strong></td><td id="numero">6</td></tr>
+  </table>
+
+  <div>
+    <button onclick="mostrarElemento('sodio')">Sodio</button>
+    <button onclick="mostrarElemento('oxigeno')">Oxígeno</button>
+    <button onclick="mostrarElemento('carbono')">Carbono</button>
+  </div>
+
+  <script>
+    const elementos = {
+      sodio: {
+        nombre: 'Sodio',
+        simbolo: 'Na',
+        peso: 22.990,
+        numero: 11
+      },
+      oxigeno: {
+        nombre: 'Oxígeno',
+        simbolo: 'O',
+        peso: 15.999,
+        numero: 8
+      },
+      carbono: {
+        nombre: 'Carbono',
+        simbolo: 'C',
+        peso: 12.011,
+        numero: 6
+      }
+    };
+
+    function mostrarElemento(elemento) {
+      document.getElementById('nombre').textContent = elementos[elemento].nombre;
+      document.getElementById('simbolo').textContent = elementos[elemento].simbolo;
+      document.getElementById('peso').textContent = elementos[elemento].peso;
+      document.getElementById('numero').textContent = elementos[elemento].numero;
+    }
+  </script>
+
+</body>
+</html>
